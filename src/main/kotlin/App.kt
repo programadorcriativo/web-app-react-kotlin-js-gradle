@@ -41,18 +41,17 @@ class App : RComponent<RProps, RState>() {
             h3 {
                 +"Videos to watch"
             }
-            for(video in unwatchedVideos) {
-                p {
-                    +"${video.speaker}: ${video.title}"
-                }
+
+            child(VideoList::class) {
+                attrs.videos = unwatchedVideos
             }
+
             h3 {
                 +"Videos watched"
             }
-            for(video in watchedVideos) {
-                p {
-                    +"${video.speaker}: ${video.title}"
-                }
+
+            child(VideoList::class) {
+                attrs.videos = watchedVideos
             }
         }
         styledDiv {
