@@ -7,13 +7,6 @@ import react.dom.*
 import styled.css
 import styled.styledDiv
 
-external interface Video {
-    val id: Int
-    val title: String
-    val speaker: String
-    val videoUrl: String
-}
-
 data class KotlinVideo(
     override val id: Int,
     override val title: String,
@@ -42,17 +35,21 @@ class App : RComponent<RProps, RState>() {
                 +"Videos to watch"
             }
 
-            child(VideoList::class) {
-                attrs.videos = unwatchedVideos
-            }
+//            child(VideoList::class) {
+//                attrs.videos = unwatchedVideos
+//            }
+
+            videoList { videos = unwatchedVideos }
 
             h3 {
                 +"Videos watched"
             }
 
-            child(VideoList::class) {
-                attrs.videos = watchedVideos
-            }
+//            child(VideoList::class) {
+//                attrs.videos = watchedVideos
+//            }
+
+            videoList { videos = watchedVideos }
         }
         styledDiv {
             css {
