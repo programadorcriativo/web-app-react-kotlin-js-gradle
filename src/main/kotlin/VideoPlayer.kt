@@ -17,6 +17,26 @@ external interface VideoPlayerProps : RProps {
 class VideoPlayer : RComponent<VideoPlayerProps, RState>() {
     override fun RBuilder.render() {
         styledDiv {
+            styledDiv {
+                css {
+                    display = Display.flex
+                    marginBottom = 10.px
+                }
+                emailShareButton {
+                    attrs.url = props.video.videoUrl
+                    emailIcon {
+                        attrs.size = 32
+                        attrs.round = true
+                    }
+                }
+                telegramShareButton {
+                    attrs.url = props.video.videoUrl
+                    telegramIcon {
+                        attrs.size = 32
+                        attrs.round = true
+                    }
+                }
+            }
             styledButton {
                 css {
                     display = Display.block
