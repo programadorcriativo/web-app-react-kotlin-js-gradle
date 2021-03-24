@@ -42,11 +42,8 @@ class VideoPlayer : RComponent<VideoPlayerProps, RState>() {
             h3 {
                 +"${props.video.speaker}: ${props.video.title}"
             }
-            img {
-                attrs {
-                    src = "https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder"
-                    alt = "Image description alt"
-                }
+            reactPlayer {
+                attrs.url = props.video.videoUrl
             }
         }
     }
